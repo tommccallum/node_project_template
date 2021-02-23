@@ -1,5 +1,6 @@
-var App = require("../App.js")
+var App = require("../App.js");
 var assert = require('assert');
+
 describe('Array', function() {
   describe('#indexOf()', function() {
     it('should return -1 when the value is not present', function() {
@@ -15,3 +16,19 @@ describe('Array', function() {
   });
 });
 
+describe("Array semantics", function() {
+  it('should wrap when the index gets to length + 1', () => {
+    const newLocation = App.move(3)
+
+    assert.strictEqual( newLocation, 0)
+  })
+
+  it('if index is a string, throw an error', () => {
+    try {
+      const newLocation = App.move("try a string")
+      assert.fail("failed to throw exception error when string")
+    } catch( error ) {
+      assert.ok("exception was thrown")
+    }
+  })
+})

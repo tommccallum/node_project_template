@@ -2,6 +2,21 @@ function helloworld() {
   return "helloworld"
 }
 
+function goodbye() {
+  return "goodbye"
+}
+
+const squares = new Array(3)
+const index = 0
+
+function move(value) {
+  if ( typeof(value) == "string" ) {
+    throw new Error("whoops!")
+  }
+  return (index + value) % squares.length
+}
+
 module.exports = {
-  helloworld: helloworld
+  helloworld: helloworld,
+  move: move
 }
