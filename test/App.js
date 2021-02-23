@@ -23,12 +23,18 @@ describe("Array semantics", function() {
     assert.strictEqual( newLocation, 0)
   })
 
-  it('if index is a string, throw an error', () => {
+  it('if index is a string, throw an error, unusual but effective', () => {
     try {
       const newLocation = App.move("try a string")
       assert.fail("failed to throw exception error when string")
     } catch( error ) {
       assert.ok("exception was thrown")
     }
+  })
+
+  it('if index is a string, throw an error, the mocha way', () => {
+    assert.throws(() => {
+      const newLocation = App.move("try a string")
+    })
   })
 })
