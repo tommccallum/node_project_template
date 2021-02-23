@@ -16,6 +16,14 @@ function move(value) {
   return (index + value) % squares.length
 }
 
+
+function writeATestToTestMe(x, y) {
+  if ( x % 2 == 0 ) {
+    return x + y
+  }
+  return x - y
+}
+
 module.exports = {
   helloworld: helloworld,
   move: move
