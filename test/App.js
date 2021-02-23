@@ -33,11 +33,12 @@ describe("Array semantics", function() {
     }
   })
 
-  it('if index is a string, throw an error, and test error string but fail', () => {
-    assert.throws(() => {
-      const newLocation = App.move("try a string")
-    }, /try a string/)
-  })
+  // NOTE: uncomment to force the fail
+  // it('if index is a string, throw an error, and test error string but fail', () => {
+  //   assert.throws(() => {
+  //     const newLocation = App.move("try a string")
+  //   }, /try a string/)
+  // })
 
   it('if index is a string, throw an error and test error string', () => {
     assert.throws(() => {
