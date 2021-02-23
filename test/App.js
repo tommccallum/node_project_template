@@ -28,13 +28,20 @@ describe("Array semantics", function() {
       const newLocation = App.move("try a string")
       assert.fail("failed to throw exception error when string")
     } catch( error ) {
+      assert.strictEqual(error.message, "whoops!")
       assert.ok("exception was thrown")
     }
   })
 
-  it('if index is a string, throw an error, the mocha way', () => {
+  it('if index is a string, throw an error, and test error string but fail', () => {
     assert.throws(() => {
       const newLocation = App.move("try a string")
-    })
+    }, /try a string/)
+  })
+
+  it('if index is a string, throw an error and test error string', () => {
+    assert.throws(() => {
+      const newLocation = App.move("try a string")
+    }, /whoops!/)
   })
 })
